@@ -12,24 +12,24 @@ btnSubmit.addEventListener('click', (e) => {
     if (!validarEmail(userEmail)) {
         console.log('Invalid email address')
         email.classList.remove('outline-1', 'outline-green-500', 'bg-white', 'text-black')
-        email.classList.add('outline-1', 'outline-red-500', 'bg-white', 'text-black')
-        btnSubmit.classList.add('transition', 'delay-25', 'duration-200', 'ease-in', 'translate-y-5')
+        email.classList.add('outline-1', 'outline-light-red', 'bg-white', 'text-very-dark-blue')
+        btnSubmit.classList.add('max-md:transition', 'max-md:delay-25', 'max-md:duration-200', 'max-md:ease-in', 'max-md:translate-y-5')
         const fragment = document.createDocumentFragment()
         const paragraph = document.createElement('p')
         paragraph.innerText = 'Please provide a valid email address'
-        paragraph.classList.add('text-red-500', 'text-[11px]', 'italic')
+        paragraph.classList.add('text-light-red', 'text-[12px]', 'italic', 'min-md:text-start', 'min-md:px-8')
         fragment.appendChild(paragraph)
-        emailAlert.appendChild(fragment)
+        if (emailAlert.childElementCount == 0) {
+            emailAlert.appendChild(fragment)
+        }
     }
     else {
         console.log('Valid email address')
-        email.classList.remove('outline-1', 'outline-red-500', 'bg-white', 'text-black')
+        email.classList.remove('outline-1', 'outline-light-red', 'bg-white', 'text-black')
         email.classList.add('outline-1', 'outline-green-500', 'bg-white', 'text-black')
         emailAlert.remove()
-        btnSubmit.classList.remove('translate-y-5')
+        btnSubmit.classList.remove('max-md:translate-y-5')
     }
-
-
 })
 
 
