@@ -40,8 +40,8 @@ Mobile
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://your-solution-url.com)
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   Solution URL: [Github Repository](https://github.com/Clar-Junior/ping-single-column-coming-soon-page)
+-   Live Site URL: [Github Pages](https://clar-junior.github.io/ping-single-column-coming-soon-page/)
 
 ## My process
 
@@ -58,7 +58,7 @@ My learnings in this project was about reinforce my knowledge about Tailwindcss,
 ```js
 const fragment = document.createDocumentFragment();
 const paragraph = document.createElement("p");
-paragraph.innerText = '"Whoops! It looks like you forgot to add your email"';
+paragraph.innerText = "Whoops! It looks like you forgot to add your email";
 paragraph.classList.add("text-light-red", "text-[12px]", "italic", "min-md:text-start", "min-md:px-8");
 fragment.appendChild(paragraph);
 if (emailAlert.childElementCount > 0) {
@@ -69,7 +69,7 @@ emailAlert.appendChild(fragment);
 
 ### Continued development
 
-I wanna continue focusing on Tailwindcss and semantica HTML, besides the Javascritpt. Improves techniques and go deeper into applications logic.
+I wanna continue focusing on Tailwindcss and semantic HTML, besides the Javascritpt. Improves techniques and go deeper into applications logic.
 
 ## Author
 

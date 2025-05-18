@@ -16,7 +16,7 @@ btnSubmit.addEventListener('click', (e) => {
         btnSubmit.classList.add('max-md:transition', 'max-md:delay-25', 'max-md:duration-200', 'max-md:ease-in', 'max-md:translate-y-5')
         const fragment = document.createDocumentFragment()
         const paragraph = document.createElement('p')
-        paragraph.innerText = '"Whoops! It looks like you forgot to add your email"'
+        paragraph.innerText = 'Whoops! It looks like you forgot to add your email'
         paragraph.classList.add('text-light-red', 'text-[12px]', 'italic', 'min-md:text-start', 'min-md:px-8')
         fragment.appendChild(paragraph)
         if (emailAlert.childElementCount > 0) {
