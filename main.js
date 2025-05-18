@@ -9,7 +9,22 @@ btnSubmit.addEventListener('click', (e) => {
     e.preventDefault()
 
     const userEmail = email.value
-    if (!validarEmail(userEmail)) {
+    if (userEmail == "") {
+        console.log('Invalid email address')
+        email.classList.remove('outline-1', 'outline-green-500', 'bg-white', 'text-black')
+        email.classList.add('outline-1', 'outline-light-red', 'bg-white', 'text-very-dark-blue')
+        btnSubmit.classList.add('max-md:transition', 'max-md:delay-25', 'max-md:duration-200', 'max-md:ease-in', 'max-md:translate-y-5')
+        const fragment = document.createDocumentFragment()
+        const paragraph = document.createElement('p')
+        paragraph.innerText = '"Whoops! It looks like you forgot to add your email"'
+        paragraph.classList.add('text-light-red', 'text-[12px]', 'italic', 'min-md:text-start', 'min-md:px-8')
+        fragment.appendChild(paragraph)
+        if (emailAlert.childElementCount > 0) {
+            emailAlert.innerText = ""
+        }
+        emailAlert.appendChild(fragment)
+    }
+    else if (!validarEmail(userEmail)) {
         console.log('Invalid email address')
         email.classList.remove('outline-1', 'outline-green-500', 'bg-white', 'text-black')
         email.classList.add('outline-1', 'outline-light-red', 'bg-white', 'text-very-dark-blue')
@@ -19,9 +34,10 @@ btnSubmit.addEventListener('click', (e) => {
         paragraph.innerText = 'Please provide a valid email address'
         paragraph.classList.add('text-light-red', 'text-[12px]', 'italic', 'min-md:text-start', 'min-md:px-8')
         fragment.appendChild(paragraph)
-        if (emailAlert.childElementCount == 0) {
-            emailAlert.appendChild(fragment)
+        if (emailAlert.childElementCount > 0) {
+            emailAlert.innerText = ""
         }
+        emailAlert.appendChild(fragment)
     }
     else {
         console.log('Valid email address')
